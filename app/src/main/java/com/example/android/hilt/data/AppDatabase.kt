@@ -18,11 +18,14 @@ package com.example.android.hilt.data
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import dagger.Module
+import dagger.hilt.InstallIn
 
 /**
  * SQLite Database for storing the logs.
  */
-@Database(entities = arrayOf(Log::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(Log::class), version = 2, exportSchema = false)
+@Module
 abstract class AppDatabase : RoomDatabase() {
     abstract fun logDao(): LogDao
 }
